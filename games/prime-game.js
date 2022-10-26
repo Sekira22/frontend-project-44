@@ -1,6 +1,5 @@
 import gameFunc from '../src/index.js';
 let gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
 let engineGame = (question) => {
   let rightAnswer = '';
    if (question === 1) {
@@ -16,11 +15,9 @@ let engineGame = (question) => {
   } 
   return rightAnswer;
 };
-
 let questionGenerate = () => {
   return Math.floor(Math.random() * 100) + 1;
 };
-
 let brainPrime = () => {
   gameFunc(gameTask, questionGenerate, engineGame);
 }

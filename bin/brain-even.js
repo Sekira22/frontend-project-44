@@ -2,5 +2,3 @@
 import brainEven from '../games/even-game.js';
 
 brainEven();
-
-

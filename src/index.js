@@ -1,9 +1,13 @@
 import readlineSync from 'readline-sync';
-import yourName from './cli.js';
-import {name} from './cli.js';
 
 let gameFunc = (gameTask, questionGenerate, engineGame) => {
+  let name = '';
   console.log('Welcome to the Brain Games!');
+  const yourName = () => {
+    name = readlineSync.question('May I have your name? ');
+    console.log('Hello, ' + name + '!');
+    return name;
+    };
   yourName();
   console.log(gameTask);
   
