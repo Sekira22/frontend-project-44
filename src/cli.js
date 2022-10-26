@@ -7,3 +7,5 @@ return name;
 };
 
 yourName();
+
+export default yourName;
