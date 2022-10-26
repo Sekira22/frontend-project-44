@@ -1,16 +1,15 @@
 import readlineSync from 'readline-sync';
-import yourName, {name} from './cli.js';
+import yourName, { name } from './cli.js';
 
-let gameFunc = (gameTask, questionGenerate, engineGame) => {
+const gameFunc = (gameTask, questionGenerate, engineGame) => {
   console.log('Welcome to the Brain Games!');
   yourName();
   console.log(gameTask);
-  
   for (let i = 0; i < 3; i += 1) {
-    let question = questionGenerate();
-    console.log('Question: ' + question);
+    const question = questionGenerate();
+    console.log(`Question: ${question}`);
 
-    let rightAnswer = engineGame(question);
+    const rightAnswer = engineGame(question);
 
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === rightAnswer) {
@@ -24,6 +23,8 @@ let gameFunc = (gameTask, questionGenerate, engineGame) => {
       i = 3;
     }
 }
+
+
 };
 
 export default gameFunc;
