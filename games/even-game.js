@@ -15,5 +15,5 @@ const questionGenerate = () => Math.floor(Math.random() * 100) + 1;
 
 const brainEven = () => {
   gameFunc(gameTask, questionGenerate, engineGame);
-}
+};
 export default brainEven;

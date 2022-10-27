@@ -2,7 +2,7 @@ import gameFunc from '../src/index.js';
 
 const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const engineGame = (question) => {
-let rightAnswer = '';
+  let rightAnswer = '';
   if (question === 1) {
     rightAnswer = 'no';
   }
@@ -18,5 +18,5 @@ let rightAnswer = '';
 const questionGenerate = () => Math.floor(Math.random() * 100) + 1;
 const brainPrime = () => {
   gameFunc(gameTask, questionGenerate, engineGame);
-}
+};
 export default brainPrime;

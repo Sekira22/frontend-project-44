@@ -7,17 +7,17 @@ const engineGame = (question) => {
   if (items[1] === '+') {
     rightAnswer = String(Number(items[0]) + Number(items[2]));
   } else if (items[1] === '-') {
-      rightAnswer = String(Number(items[0]) - Number(items[2]));
+    rightAnswer = String(Number(items[0]) - Number(items[2]));
   } else if (items[1] === '*') {
-      rightAnswer = String(Number(items[0]) * Number(items[2]));
+    rightAnswer = String(Number(items[0]) * Number(items[2]));
   }
   return rightAnswer;
 };
 
 const questionGenerate = () => {
-  const numberOne = Math.floor(Math.random() * 20) + 1,
-        numberTwo = Math.floor(Math.random() * 20) + 1,
-        operator = ['+', '-', '*'];
+  const numberOne = Math.floor(Math.random() * 20) + 1;
+  const numberTwo = Math.floor(Math.random() * 20) + 1;
+  const operator = ['+', '-', '*'];
   const randomOperator = operator[Math.floor(Math.random() * operator.length)];
   const question = `${numberOne} ${randomOperator} ${numberTwo}`;
   return question;
@@ -25,5 +25,5 @@ const questionGenerate = () => {
 
 const brainCalc = () => {
   gameFunc(gameTask, questionGenerate, engineGame);
-}
+};
 export default brainCalc;
