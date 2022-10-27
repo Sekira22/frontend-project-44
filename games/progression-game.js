@@ -14,8 +14,8 @@ const engineGame = (question) => {
         summand = Number(array[i - 1]) - Number(array[i - 2]);
         rightAnswer = String(Number(array[i - 1]) + summand);
       } else {
-          summand = (Number(array[i + 1]) - Number(array[i - 1])) / 2;
-          rightAnswer = String(Number(array[i - 1]) + summand);
+        summand = (Number(array[i + 1]) - Number(array[i - 1])) / 2;
+        rightAnswer = String(Number(array[i - 1]) + summand);
       }
     }
   }
@@ -29,15 +29,15 @@ const questionGenerate = () => {
   const summand = Math.floor(Math.random() * 5) + 1;
   array[0] = Math.floor(Math.random() * 10) + 1;
   let result = array[0];
-    for (let i = 0; i < 10; i += 1) {
-      if (i === placeMiss - 1) {
-        result += summand;
-        array[i] = miss;
-      } else if (i !== 0) {
-        array[i] = result + summand;
-        result = array[i];
-      }
+  for (let i = 0; i < 10; i += 1) {
+    if (i === placeMiss - 1) {
+      result += summand;
+      array[i] = miss;
+    } else if (i !== 0) {
+      array[i] = result + summand;
+      result = array[i];
     }
+  }
   const question = array.join(' ');
   return question;
 };
