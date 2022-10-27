@@ -1,43 +1,42 @@
 import gameFunc from '../src/index.js';
-let gameTask = 'Find the greatest common divisor of given numbers.';
 
-let engineGame = (question) => {
+const gameTask = 'Find the greatest common divisor of given numbers.';
+const engineGame = (question) => {
   let rightAnswer = '';
-  let item = question.split(' ')
-  if (Number(item[0]) < Number(item[1])) {
-    let x = item[0];
-    item[0] = item[1];
-    item[1] = x;
+  const item = question.split(' ');
+  let [firstItem, secondItem] = item;
+  if (Number(firstItem) < Number(secondItem)) {
+    const change = firstItem;
+    firstItem = secondItem;
+    secondItem = change;
   }
-  if (Number(item[0]) >= Number(item[1])) {
-    if (Number(item[0]) % Number(item[1]) === 0) {
-      rightAnswer = String(item[1]);
-    } 
-    else {
-      let rem = Number(item[0]) % Number(item[1]);
-       do {
-      if (Number(item[1]) % rem === 0) {
-        rightAnswer = String(rem);
-        return rightAnswer;
-      } else {
-        item[0] = item[1];
-        item[1] = rem;
-        rem = Number(item[0]) % Number(item[1]);
+  if (Number(firstItem) >= Number(secondItem)) {
+    if (Number(firstItem) % Number(secondItem) === 0) {
+      rightAnswer = String(secondItem);
+    } else {
+      let rem = Number(firstItem) % Number(secondItem);
+        do {
+          if (Number(secondItem) % rem === 0) {
+            rightAnswer = String(rem);
+            return rightAnswer;
+          }
+          firstItem = secondItem;
+          secondItem = rem;
+          rem = Number(firstItem) % Number(secondItem);
+        } while (rem > 0)
       }
-      } while (rem > 0)
-    }
   }
   return rightAnswer;
 };
 
-let questionGenerate = () => {
-  let numberOne = Math.floor(Math.random() * 100) + 1;
-  let numberTwo = Math.floor(Math.random() * 100) + 1;
-  let question = String(numberOne + ' ' + numberTwo);
+const questionGenerate = () => {
+  const numberOne = Math.floor(Math.random() * 100) + 1,
+        numberTwo = Math.floor(Math.random() * 100) + 1,
+        question = `${numberOne} ${numberTwo}`;
   return question;
 };
 
-let brainGcd = () => {
+const brainGcd = () => {
   gameFunc(gameTask, questionGenerate, engineGame);
 }
-export default brainGcd
+export default brainGcd;

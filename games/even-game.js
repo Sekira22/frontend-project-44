@@ -1,7 +1,7 @@
 import gameFunc from '../src/index.js';
-let gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-let engineGame = (question) => {
+const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
+const engineGame = (question) => {
   let rightAnswer = '';
   if (question % 2 === 0) {
     rightAnswer = 'yes';
@@ -11,11 +11,9 @@ let engineGame = (question) => {
   return rightAnswer;
 };
 
-let questionGenerate = () => {
-  return Math.floor(Math.random() * 100) + 1;
-};
+const questionGenerate = () => Math.floor(Math.random() * 100) + 1;
 
-let brainEven = () => {
+const brainEven = () => {
   gameFunc(gameTask, questionGenerate, engineGame);
 }
-export default brainEven
+export default brainEven;

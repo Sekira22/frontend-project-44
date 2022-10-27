@@ -5,5 +5,5 @@ const yourName = () => {
   console.log(`Hello, ${userName}!`);
 };
 
-export { userName }
+export { userName };
 export default yourName;
